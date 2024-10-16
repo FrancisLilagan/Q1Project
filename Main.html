@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Uniqlo Reseller Shop</title> 
+    <style>
+        @font-face {
+            font-family: 'D-Din';
+            src: url('D-DIN-Bold.woff2') format('woff2'),
+                 url('D-DIN-Bold.woff') format('woff');
+            font-weight: normal;
+            font-style: normal;
+        }
+        body {
+            font-family: 'D-Din', Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        header {
+            background-color: #FF0000;
+            color: white;
+            padding: 10px;
+            text-align: center;
+        }
+        nav {
+            background-color: #333;
+            overflow: hidden;
+        }
+        nav ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+        }
+        nav ul li {
+            float: left;
+            display: inline;
+            padding: 14px 20px;
+        }
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+        }
+        .hero {
+            text-align: center;
+            margin: 20px;
+        }
+        .hero img {
+            width: 100%;
+            max-height: 300px;
+            object-fit: cover;
+        }
+        .hero h2 {
+            margin-top: -50px;
+            color: white;
+            font-size: 40px;
+            font-weight: bold;
+        }
+        .products {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            padding: 20px;
+        }
+        .product {
+            background-color: white;
+            padding: 10px;
+            margin: 10px;
+            text-align: center;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            width: 200px;
+            transition: transform 0.5s ease; 
+        }
+        .product:hover {
+            transform: scale(1.2); 
+        }
+        .product img {
+            width: 100%;
+            height: auto;
+        }
+        button {
+            font-family: 'D-Din', Arial, sans-serif;
+            background-color: #FF0000;
+            color: white;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Uniqlo Reseller</h1>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="#">Shop</a></li>
+            <li><a href="checkout.html">Checkout</a></li>
+            <li><a href="login.html">Login | Signup</a></li>
+        </ul>
+    </nav>
+
+    <div class="hero">
+        <img src="https://im.uniqlo.com/global-cms/spa/res3013f8d19a78a2146c713b88ab3c2cb3fr.jpg" alt="Banner">
+        <p>FREE SHIPPING ON ORDERS OVER P 1000</p>
+    </div>
+
+    <div class="products">
+        <div class="product">
+            <img src="https://image.uniqlo.com/UQ/ST3/ph/imagesgoods/476660/sub/phgoods_476660_sub7.jpg" alt="Jujutsu Kaisen UT">
+            <p>Jujutsu Kaisen UT</p>
+            <p>PHP 790.00</p>
+            <button onclick="addToCart('Jujutsu Kaisen UT', 790, 'https://image.uniqlo.com/UQ/ST3/ph/imagesgoods/476660/sub/phgoods_476660_sub7.jpg')">Add to Cart</button>
+        </div>
+        <div class="product">
+            <img src="https://image.uniqlo.com/UQ/ST3/ph/imagesgoods/476657/item/phgoods_09_476657.jpg" alt="Demon Slayer UT">
+            <p>Demon Slayer UT</p>
+            <p>PHP 790.00</p>
+            <button onclick="addToCart('Demon Slayer UT', 790, 'https://image.uniqlo.com/UQ/ST3/ph/imagesgoods/476657/item/phgoods_09_476657.jpg')">Add to Cart</button>
+        </div>
+        <div class="product">
+            <img src="https://image.uniqlo.com/UQ/ST3/ph/imagesgoods/475844/sub/phgoods_475844_sub7.jpg" alt="Pokémon Short Sleeve UT">
+            <p>Pokémon Short Sleeve UT</p>
+            <p>PHP 790.00</p>
+            <button onclick="addToCart('Pokémon Short Sleeve UT', 790, 'https://image.uniqlo.com/UQ/ST3/ph/imagesgoods/475844/sub/phgoods_475844_sub7.jpg')">Add to Cart</button>
+        </div>
+        <div class="product">
+            <img src="https://image.uniqlo.com/UQ/ST3/ph/imagesgoods/474898/item/phgoods_09_474898.jpg" alt="UKIYO-E Dark Fantasy UT">
+            <p>UKIYO-E Dark Fantasy UT</p>
+            <p>PHP 790.00</p>
+            <button onclick="addToCart('UKIYO-E Dark Fantasy UT', 790, 'https://image.uniqlo.com/UQ/ST3/ph/imagesgoods/474898/item/phgoods_09_474898.jpg')">Add to Cart</button>
+        </div>
+        <div class="product">
+            <img src="https://image.uniqlo.com/UQ/ST3/ph/imagesgoods/473496/sub/phgoods_473496_sub1.jpg" alt="ONE PIECE Short Sleeve UT">
+            <p>ONE PIECE Short Sleeve UT</p>
+            <p>PHP 890.00</p>
+            <button onclick="addToCart('ONE PIECE Short Sleeve UT', 890, 'https://image.uniqlo.com/UQ/ST3/ph/imagesgoods/473496/sub/phgoods_473496_sub1.jpg')">Add to Cart</button>
+        </div>
+        <div class="product">
+            <img src="https://image.uniqlo.com/UQ/ST3/ph/imagesgoods/473521/item/phgoods_08_473521.jpg" alt="KENSHI YONEZU Short Sleeve UT">
+            <p>KENSHI YONEZU Short Sleeve UT</p>
+            <p>PHP 890.00</p>
+            <button onclick="addToCart('KENSHI YONEZU Short Sleeve UT', 890, 'https://image.uniqlo.com/UQ/ST3/ph/imagesgoods/473521/item/phgoods_08_473521.jpg')">Add to Cart</button>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Uniqlo Reseller Shop. All rights reserved.</p>
+    </footer>
+
+    <script>
+        function addToCart(name, price, image) {
+            const cart = JSON.parse(localStorage.getItem('cart')) || [];
+            const item = { name, price, image };
+            cart.push(item);
+            localStorage.setItem('cart', JSON.stringify(cart));
+            alert(`${name} has been added to your cart!`);
+        }
+    </script>
+
+</body>
+</html>

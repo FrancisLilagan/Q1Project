@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkout</title>
+    <style>
+        body {
+            font-family: 'D-Din', Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        header {
+            background-color: #FF0000;
+            color: white;
+            padding: 10px;
+            text-align: center;
+        }
+        .cart-items {
+            margin: 20px;
+            padding: 20px;
+            background-color: white;
+            border-radius: 5px;
+        }
+        .total {
+            font-weight: bold;
+        }
+        .checkout-button {
+            background-color: #FF0000;
+            color: white;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        .checkout-button:hover {
+            background-color: #cc0000;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Checkout</h1>
+    </header>
+
+    <div class="cart-items">
+        <h2>Your Cart</h2>
+        <div id="cart"></div>
+        <div class="total" id="total"></div>
+        <button class="checkout-button" onclick="checkout()">Checkout</button>
+    </div>
+
+    <script>
+        function displayCart() {
+            const cart = JSON.parse(localStorage.getItem('cart')) || [];
+            const cartContainer = document.getElementById('cart');
+            const totalContainer = document.getElementById('total');
+            let total = 0;
+
+            cartContainer.innerHTML = '';
+            cart.forEach(item => {
+                const itemElement = document.createElement('div');
+                itemElement.textContent = `${item.name} - PHP ${item.price}`;
+                cartContainer.appendChild(itemElement);
+                total += item.price;
+            });
+
+            totalContainer.textContent = `Total: PHP ${total}`;
+        }
+
+        function checkout() {
+            const cart = JSON.parse(localStorage.getItem('cart')) || [];
+            if (cart.length > 0) {
+                alert('Checkout successful! Thank you for your purchase.');
+
+                localStorage.removeItem('cart'); 
+
+                window.location.href = 'Main.html'; 
+            } else {
+                alert('Your cart is empty!');
+            }
+        }
+
+        displayCart();
+    </script>
+
+</body>
+</html>

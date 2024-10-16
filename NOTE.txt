@@ -1,0 +1,3 @@
+Main = Main Page
+login = Sign Up/ Log in Page
+checkout = Checkout
